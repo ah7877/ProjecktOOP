@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hougaard\\source\\repos\\OOPEksamensOpgave\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj",
+      "projectUniqueName": "C:\\Users\\Hougaard\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj",
       "projectName": "OOPEksamensOpgave",
-      "projectPath": "C:\\Users\\Hougaard\\source\\repos\\OOPEksamensOpgave\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj",
+      "projectPath": "C:\\Users\\Hougaard\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj",
       "packagesPath": "C:\\Users\\Hougaard\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hougaard\\source\\repos\\OOPEksamensOpgave\\OOPEksamensOpgave\\obj\\",
+      "outputPath": "C:\\Users\\Hougaard\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\OOPEksamensOpgave\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
