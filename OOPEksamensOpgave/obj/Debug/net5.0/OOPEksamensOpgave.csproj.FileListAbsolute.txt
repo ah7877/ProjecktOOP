@@ -1,0 +1,16 @@
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.exe
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.deps.json
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.runtimeconfig.json
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.runtimeconfig.dev.json
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.dll
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\ref\OOPEksamensOpgave.dll
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.pdb
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.csproj.AssemblyReference.cache
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.AssemblyInfoInputs.cache
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.AssemblyInfo.cs
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.csproj.CoreCompileInputs.cache
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.dll
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\ref\OOPEksamensOpgave.dll
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.pdb
+C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.genruntimeconfig.cache

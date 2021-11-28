@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace OOPEksamensOpgave.Models
 {
-    class User
+    class User : IComparable 
     {
+        public delegate int UserBalanceNotification(User user, decimal balance);
+
         private int _id;
         private string _firstName;
         private string _lastName;
         private string _userName;
         private string _email;
-        private int _balance;
+        private decimal _balance;
 
         /*
-         * implimentationer der mangler
+            implimentationer der mangler
+            en delegate til at smide en besked til når brugeren har mindre end 50 kr på kontoen
+                UserBalaceNotification(User user, decimal balance)
             ToString
                 Retunerer Fornavn(e) Efternavn (Email)
             EqualsMethod samt GetHashCode
@@ -24,10 +28,15 @@ namespace OOPEksamensOpgave.Models
             fornuftig Constructer
          */
 
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}";
+        }
 
-
-
-
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
 
 
 
@@ -61,7 +70,7 @@ namespace OOPEksamensOpgave.Models
             set { _email = value; }
         }
 
-        public int Balance
+        public decimal Balance
         {
             get { return _balance; }
             set { _balance = value; }

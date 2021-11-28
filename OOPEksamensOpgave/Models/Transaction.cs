@@ -9,7 +9,7 @@ namespace OOPEksamensOpgave.Models
     abstract class Transaction
     {
         private int _id;
-        private string _userName;
+        private User _user;
         private DateTime _date;
         private int _amount;
 
@@ -24,7 +24,11 @@ namespace OOPEksamensOpgave.Models
          */
 
 
-
+        public abstract void Execute();
+        public override string ToString() 
+        {
+            return "hej";
+        }
 
 
         public int ID
@@ -33,10 +37,10 @@ namespace OOPEksamensOpgave.Models
             private set { _id = value; }
         }
 
-        public string UserName
+        public User User
         {
-            get { return _userName; }
-            set { _userName = value; }
+            get { return _user; }
+            set { _user = value; }
         }
 
         public DateTime Date

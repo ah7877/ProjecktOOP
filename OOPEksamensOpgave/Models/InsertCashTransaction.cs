@@ -8,5 +8,14 @@ namespace OOPEksamensOpgave.Models
 {
     class InsertCashTransaction : Transaction
     {
+        public override void Execute()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
