@@ -1,4 +1,5 @@
 ﻿using System;
+using OOPEksamensOpgave.Models;
 
 namespace OOPEksamensOpgave
 {
@@ -6,6 +7,7 @@ namespace OOPEksamensOpgave
     {
         static void Main(string[] args)
         {
+            BuyTransaction t = new BuyTransaction();
             Console.WriteLine("Hello World!");
         }
     }

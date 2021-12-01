@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace OOPEksamensOpgave.Models
 {
-    class BuyTransaction : Transaction
+    public class BuyTransaction : Transaction
     {
         private Product _product;
+
+        public BuyTransaction(Product product, int iD, User user, int amount) : base(iD, user, amount)
+        {
+            Product = product;
+        }
 
         public Product Product
         {

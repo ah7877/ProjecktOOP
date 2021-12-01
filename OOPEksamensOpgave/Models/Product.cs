@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPEksamensOpgave.Models
 {
-    public class Product
+    public class Product 
     {
         private int _id;
         private string _name;

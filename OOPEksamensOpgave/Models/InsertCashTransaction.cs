@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace OOPEksamensOpgave.Models
 {
-    class InsertCashTransaction : Transaction
+    public class InsertCashTransaction : Transaction
     {
+        public InsertCashTransaction() : base()
+        {
+        }
+
         public override void Execute()
         {
             throw new NotImplementedException();

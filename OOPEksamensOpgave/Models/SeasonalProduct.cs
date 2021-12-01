@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPEksamensOpgave.Models
 {
-    class SeasonalProduct : Product
+    public class SeasonalProduct : Product
     {
         private DateTime _seasonStartDate;
         private DateTime _seasonEndDate;

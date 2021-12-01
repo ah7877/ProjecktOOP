@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPEksamensOpgave.Models
 {
-    class User : IComparable 
+    public class User : IComparable 
     {
         public delegate int UserBalanceNotification(User user, decimal balance);
 
