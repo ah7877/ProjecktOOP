@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\OOPEksamensOpgave",
+    "\\OOPEksamensOpgave\\Models"
   ],
-  "SelectedNode": "\\OOPEksamensOpgave.sln",
+  "SelectedNode": "\\OOPEksamensOpgave\\Models\\BuyTransaction.cs",
   "PreviewInSolutionExplorer": false
 }
