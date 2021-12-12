@@ -6,25 +6,26 @@ using System.Threading.Tasks;
 
 namespace OOPEksamensOpgave.Models
 {
-    public class Product 
+    public class Product
     {
         private int _id;
         private string _name;
-        private int _price;
+        private decimal _price;
         private bool _active;
         private bool _canBeBoughtOnCredit;
 
+        public Product(int iD, string name, decimal price, bool active)
+        {
+            ID = iD;
+            Name = name;
+            Price = price;
+            Active = active;
+        }
 
-        /*
-            implimentationer
-                ToString
-                    ID, Navn og Pris
-                fornuftig constructer
-         */
-
-
-
-
+        public override string ToString()
+        {
+            return $"{ID, -5} {Name, -40} {string.Format("{0:0.00}",Price), 10}";
+        }
 
 
 
@@ -37,10 +38,13 @@ namespace OOPEksamensOpgave.Models
         public string Name
         {
             get { return _name; }
-            set { _name = value; }
+            set 
+            { 
+                _name = value; 
+            }
         }
 
-        public int Price
+        public decimal Price
         {
             get { return _price; }
             set { _price = value; }
@@ -57,7 +61,6 @@ namespace OOPEksamensOpgave.Models
             get { return _canBeBoughtOnCredit; }
             set { _canBeBoughtOnCredit = value; }
         }
-
 
     }
 }

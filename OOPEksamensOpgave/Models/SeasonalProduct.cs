@@ -11,8 +11,14 @@ namespace OOPEksamensOpgave.Models
         private DateTime _seasonStartDate;
         private DateTime _seasonEndDate;
 
+        public SeasonalProduct(int iD, string name, decimal price, bool active, DateTime seasonStartDate, DateTime seasonEndDate): base (iD, name, price, active)
+        {
+            SeasonEndDate = seasonStartDate;
+            SeasonEndDate = seasonEndDate;
+        }
+
         /*
-         Noget der checker om den er i season
+         Noget der checker om den er i season og ændre active efter det
          */
 
         public DateTime SeasonStartDate

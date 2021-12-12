@@ -3,46 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OOPEksamensOpgave.Exeptions;
 
 namespace OOPEksamensOpgave.Models
 {
-    public class User : IComparable 
+    public class User : IComparable
     {
+        //since the only time a user is added there is no validation on the id
+        //i assume the ID is given by another program that writes in the users.csv in Data file with an agreed upon syntax for user data
         private uint _id;
-        private static uint _nextID = 1;
         private string _firstName;
         private string _lastName;
         private string _userName;
         private string _email;
         private decimal _balance;
 
-        public User(string firstName, string lastName, string userName, string email, decimal balance)
+        public User(uint id, string firstName, string lastName, string userName, string email, decimal balance)
         {
-            _firstName = firstName;
-            _lastName = lastName;
-            _userName = userName;
-            _email = email;
-            _balance = balance;
-
-            ID = NextID++;
+            ID = id;
+            FirstName = firstName;
+            LastName = lastName;
+            UserName = userName;
+            Email = email;
+            Balance = balance;
         }
 
-        /*
-            implimentationer der mangler
-            en delegate til at smide en besked til når brugeren har mindre end 50 kr på kontoen
-                UserBalaceNotification(User user, decimal balance)
-            ToString
-                Retunerer Fornavn(e) Efternavn (Email)
-            EqualsMethod samt GetHashCode
-            impliment IComparable, sortere på ID
-            fornuftig Constructer
-         */
+        //returns all userdata
+        public string AllUserData()
+        {
+            return $"{ID,-4} {FirstName,-10} {LastName,-10} {UserName,-10} {Email, -10} {string.Format("{0:0.00}", Balance),10}";
+        }
 
         public override string ToString()
         {
-            return $"{FirstName} {LastName}";
+            return $"{FirstName, -10} {LastName,-10}";
         }
 
+        //makes User comparable
         public int CompareTo(object obj)
         {
             if (obj == null) return 1;
@@ -54,19 +51,7 @@ namespace OOPEksamensOpgave.Models
                 throw new ArgumentException("Object is not a User");
         }
 
-
-        public override int GetHashCode()
-        {
-            try
-            {
-                return (int) ID;
-            }
-            catch
-            {
-                throw new ArgumentException("ID out of int range");
-            }
-        }
-
+        //overrides Equalsmethod and checks on username instead
         public override bool Equals(Object obj)
         {
             if ((obj == null) || !this.GetType().Equals(obj.GetType()))
@@ -80,13 +65,12 @@ namespace OOPEksamensOpgave.Models
             }
         }
 
-
-
-        private bool UsernameValidation (string name)
+        //checks if the username is valid
+        private bool UsernameIsValid(string name)
         {
             foreach (char item in name)
             {
-                if(!char.IsDigit(item) && !Char.IsLower(item) && item != '_')
+                if (!char.IsDigit(item) && !Char.IsLower(item) && item != '_')
                 {
                     return false;
                 }
@@ -94,19 +78,20 @@ namespace OOPEksamensOpgave.Models
             return true;
         }
 
-        private bool EmailValidation(string email)
+        //checks if the email is valid
+        private bool EmailIsValid(string email)
         {
             string[] emailParts = email.Split('@');
             if (emailParts.Length != 2)
             {
-                return false;
+                throw new ArgumentException("There can only be one @ in the Email");
             }
 
             foreach (char item in emailParts[0])
             {
                 if (!char.IsDigit(item) && !char.IsLetter(item) && item != '_' && item != '.' && item != '-')
                 {
-                    return false;
+                    throw new ArgumentException("local-part@domain: Local-part can only contain letters, numbers, \".\", \"_\" and \"-\"");
                 }
             }
 
@@ -114,19 +99,21 @@ namespace OOPEksamensOpgave.Models
             {
                 if (!char.IsDigit(item) && !char.IsLetter(item) && item != '.' && item != '-')
                 {
-                    return false;
+                    throw new ArgumentException("local-part@domain: Domain can only contain letters, numbers, \".\" and \"-\"");
                 }
             }
 
             if (!emailParts[1].Contains(".") || emailParts[1].StartsWith(".") || emailParts[1].StartsWith("-") || emailParts[1].EndsWith(".") || emailParts[1].EndsWith("-"))
-                return false;
+                throw new ArgumentException("local-part@domain: Domain can not start or end with \".\" or \"-\"");
 
             return true;
         }
 
-
-
-
+        //uses id and username to generate a hash code since both should be uniqe variabels
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(ID, UserName);
+        }
 
         public uint ID
         {
@@ -134,64 +121,85 @@ namespace OOPEksamensOpgave.Models
             private set { _id = value; }
         }
 
-        public static uint NextID
-        {
-            get { return _nextID; }
-            set { _nextID = value; }
-        }
-
         public string FirstName
         {
             get { return _firstName; }
             set
             {
-                if (value == null)
+                try
                 {
-                    throw new ArgumentException("First Name can not be null");
+                    if (value == null)
+                    {
+                        throw new  NameNullExeption("First Name can not be null");
+                    }
+                    else
+                        _firstName = value;
                 }
-                _firstName = value; 
+                catch(NameNullExeption e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
         }
 
         public string LastName
         {
             get { return _lastName; }
-            set 
+            set
             {
-                if (value == null)
+                try
                 {
-                    throw new ArgumentException("Last Name can not be null");
+                    if (value == null)
+                    {
+                        throw new NameNullExeption("Last Name can not be null");
+                    }
+                    else
+                        _lastName = value;
                 }
-                _lastName = value; 
+                catch (NameNullExeption e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
         }
 
         public string UserName
         {
             get { return _userName; }
-            set 
+            set
             {
-                if (UsernameValidation(value))
+                try
                 {
-                    _userName = value;
+                    if (!UsernameIsValid(value))
+                    {
+                        throw new ArgumentException("Username can only contain digits, lowercase letters and underscore");
+                    }
+                    else
+                        _userName = value;
                 }
-                else
-                    throw new ArgumentException("Username can only contain digits, lowercase letters and underscore");
+                catch (ArgumentException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
         }
 
         public string Email
         {
             get { return _email; }
-            set 
+            set
             {
-                if (EmailValidation(value))
+                try
                 {
-                    _email = value;
+                    if (EmailIsValid(value))
+                    {
+                        _email = value;
+                    }
                 }
-                else
-                    throw new ArgumentException("local-part@domain: Local part can only contain letters, numbers, dot\".\", underscore\"_\" and hyphen\"-\"");
-
+                catch (ArgumentException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
         }
 
