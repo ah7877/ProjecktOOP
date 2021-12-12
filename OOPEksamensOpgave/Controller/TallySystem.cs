@@ -15,7 +15,7 @@ namespace OOPEksamensOpgave.Models
 
         public InsertCashTransaction AddCreditsToAccount(User user, int amount)
         {
-            throw new NotImplementedException();
+            InsertCashTransaction addCreditsToAccount = new InsertCashTransaction(ID, user, amount);
         }
 
         public BuyTransaction BuyProduct(User user, Product product)

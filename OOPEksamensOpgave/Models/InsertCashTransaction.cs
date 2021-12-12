@@ -8,7 +8,7 @@ namespace OOPEksamensOpgave.Models
 {
     public class InsertCashTransaction : Transaction
     {
-        public InsertCashTransaction() : base()
+        public InsertCashTransaction(int iD, User user, int amount) : base(iD, user, amount)
         {
         }
 

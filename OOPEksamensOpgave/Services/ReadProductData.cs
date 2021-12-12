@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPEksamensOpgave
+namespace OOPEksamensOpgave.Services
 {
-    class Notes
+    class ReadProductData
     {
+
+
+
     }
 }
