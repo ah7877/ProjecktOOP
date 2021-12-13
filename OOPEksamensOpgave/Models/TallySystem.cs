@@ -33,7 +33,8 @@ namespace OOPEksamensOpgave.Models
                     plst.Add(p);
                 }
             }
-            return plst;
+            IEnumerable<Product> p = plst;
+            return p;
         }
 
         public event UserBalanceNotification UserBalanceWarning;

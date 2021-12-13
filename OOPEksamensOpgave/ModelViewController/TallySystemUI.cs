@@ -64,13 +64,13 @@ namespace OOPEksamensOpgave.ModelViewController
 
         public void Start()
         {
-            IEnumerable<Product> products = TallySystem.ActiveProducts();
             Console.Clear();
             Console.WriteLine($"{"ID",5}{"Product",-20}{"Price",10}");
 
-            foreach (Product p in TallySystem.ActiveProducts())
+            IEnumerable<Product> products = TallySystem.ActiveProducts();
+            foreach (Product p in products)
             {
-                Console.WriteLine(TallySystem.ActiveProducts.ToString());
+                Console.WriteLine(p.ToString());
             }
 
         }
