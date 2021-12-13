@@ -16,4 +16,3 @@ C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\ne
 C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.genruntimeconfig.cache
 C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\Data\products.csv
 C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\Data\users.csv
-C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\Data\TransactionLog.csv

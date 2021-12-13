@@ -10,7 +10,7 @@ namespace OOPEksamensOpgave.Interfaces
 {
     public interface ITallySystem
     {
-        IEnumerable<Product> ActiveProducts { get; }
+        IEnumerable<Product> ActiveProducts();
         InsertCashTransaction AddCreditsToAccount(User user, int amount);
         BuyTransaction BuyProduct(User user, Product product);
         Product GetProductByID(int id);

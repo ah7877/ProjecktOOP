@@ -6,15 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ModelViewController\" />
-	  <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Data\products.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\TransactionLog.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Data\users.csv">

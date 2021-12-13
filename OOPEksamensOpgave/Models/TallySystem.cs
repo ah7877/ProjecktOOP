@@ -4,18 +4,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OOPEksamensOpgave.Interfaces;
+using OOPEksamensOpgave.Services;
 
 namespace OOPEksamensOpgave.Models
 {
-    class TallySystem : ITallySystem
+    public class TallySystem : ITallySystem
     {
-        public IEnumerable<Product> ActiveProducts => throw new NotImplementedException();
+        private List<User> _users = ReadData.ReadUserFile();
+        private List<Product> _products = ReadData.ReadProductFile();
+        public List<User> Users
+        {
+            get { return _users; }
+            private set { _users = value; }
+        }
+        public List<Product> Products
+        {
+            get { return _products; }
+            private set { _products = value; }
+        }
+
+        public IEnumerable<Product> ActiveProducts()
+        {
+            List<Product> plst = new();
+            foreach(Product p in Products)
+            {
+                if (p.IsActive==true)
+                {
+                    plst.Add(p);
+                }
+            }
+            return plst;
+        }
 
         public event UserBalanceNotification UserBalanceWarning;
 
         public InsertCashTransaction AddCreditsToAccount(User user, int amount)
         {
-            throw new NotImplementedException();
+            InsertCashTransaction Transaction = new(user, Convert.ToDecimal(amount));
+            Transaction.Execute();
+            return Transaction;
         }
 
         public BuyTransaction BuyProduct(User user, Product product)
