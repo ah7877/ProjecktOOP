@@ -18,9 +18,9 @@ namespace OOPEksamensOpgave.Services
 
             for (int i = 1; i < lines.Length; i++)
             {
-                string[] productVariables = lines[i].Split(";");
-                productList.Add(new Product(Convert.ToInt32(productVariables[0]), productVariables[1], Convert.ToDecimal(productVariables[2])/100, Convert.ToBoolean(Convert.ToInt32(productVariables[3]))));
-                //since there is no startDate on any products every poduct is currently listed as a regular product
+                    string[] productVariables = lines[i].Split(";");
+                    //since there is no startDate on any products every poduct is currently listed as a regular product
+                    productList.Add(new Product(Convert.ToUInt32(productVariables[0]), productVariables[1], Convert.ToDecimal(productVariables[2]) / 100, Convert.ToBoolean(Convert.ToInt32(productVariables[3]))));
             }
             return productList;
         }

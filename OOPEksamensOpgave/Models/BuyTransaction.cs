@@ -1,8 +1,10 @@
-﻿using System;
+﻿using OOPEksamensOpgave.Exeptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OOPEksamensOpgave.Services;
 
 namespace OOPEksamensOpgave.Models
 {
@@ -10,9 +12,9 @@ namespace OOPEksamensOpgave.Models
     {
         private Product _product;
 
-        public BuyTransaction(Product product, int iD, User user, int amount) : base(iD, user, amount)
+        public BuyTransaction(Product product, User user) : base(user, -product.Price)
         {
-            Product = product;
+            Product = new Product(product.ID, product.Name, product.Price, product.IsActive);
         }
 
         public Product Product
@@ -23,12 +25,25 @@ namespace OOPEksamensOpgave.Models
 
         public override void Execute()
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (User.Balance + Amount > 0)
+                {
+                    User.Balance += Amount;
+
+                }
+                else
+                    throw new InsufficientCreditsException("User Balance is too low for this transaction", User, Product);
+            }
+            catch(InsufficientCreditsException e)
+            {
+                Console.WriteLine(e.ToString());
+            }
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            return $"{ID,7} {User.UserName,-10} {Product.Name,-20} {string.Format("{0:0.00}", Amount),10}, {Date.ToShortDateString(),-10} purchase transaction";
         }
     }
 }

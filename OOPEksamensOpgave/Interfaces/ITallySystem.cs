@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OOPEksamensOpgave.Models;
 
+
 namespace OOPEksamensOpgave.Interfaces
 {
     public interface ITallySystem

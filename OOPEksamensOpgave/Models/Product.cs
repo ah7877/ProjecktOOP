@@ -3,33 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OOPEksamensOpgave.Exeptions;
 
 namespace OOPEksamensOpgave.Models
 {
     public class Product
     {
-        private int _id;
+        private uint _id;
         private string _name;
         private decimal _price;
-        private bool _active;
+        private bool _isActive;
         private bool _canBeBoughtOnCredit;
 
-        public Product(int iD, string name, decimal price, bool active)
+        public Product(uint iD, string name, decimal price, bool active)
         {
             ID = iD;
             Name = name;
             Price = price;
-            Active = active;
+            IsActive = active;
+            CanBeBoughtOnCredit = false;
+        }
+
+        public string AllProductData()
+        {
+            return $"{ID,7} {Name,-40} {string.Format("{0:0.00}", Price),10} IsActive = {IsActive, 5} CanBeBoughtOnCredits = {CanBeBoughtOnCredit,5}";
         }
 
         public override string ToString()
         {
-            return $"{ID, -5} {Name, -40} {string.Format("{0:0.00}",Price), 10}";
+            return $"{ID,7} {Name,-40} {string.Format("{0:0.00}", Price),10}";
+        }
+
+        public void SwitchActiveStateOfProduct()
+        {
+            IsActive = !IsActive;
         }
 
 
-
-        public int ID
+        public uint ID
         {
             get { return _id; }
             private set { _id = value; }
@@ -38,9 +49,21 @@ namespace OOPEksamensOpgave.Models
         public string Name
         {
             get { return _name; }
-            set 
-            { 
-                _name = value; 
+            set
+            {
+                try
+                {
+                    if (value == null)
+                    {
+                        throw new NameNullExeption("Name of product can not be null");
+                    }
+                    else
+                        _name = value;
+                }
+                catch (NameNullExeption e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
         }
 
@@ -50,10 +73,10 @@ namespace OOPEksamensOpgave.Models
             set { _price = value; }
         }
 
-        public bool Active
+        public bool IsActive
         {
-            get { return _active; }
-            set { _active = value; }
+            get { return _isActive; }
+            set { _isActive = value; }
         }
 
         public bool CanBeBoughtOnCredit

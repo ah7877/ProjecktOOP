@@ -12,6 +12,7 @@ namespace OOPEksamensOpgave.Models
         //since the only time a user is added there is no validation on the id
         //i assume the ID is given by another program that writes in the users.csv in Data file with an agreed upon syntax for user data
         private uint _id;
+        private static uint _nextID = 1;
         private string _firstName;
         private string _lastName;
         private string _userName;
@@ -21,6 +22,7 @@ namespace OOPEksamensOpgave.Models
         public User(uint id, string firstName, string lastName, string userName, string email, decimal balance)
         {
             ID = id;
+            NextID = id + 1;
             FirstName = firstName;
             LastName = lastName;
             UserName = userName;
@@ -28,10 +30,21 @@ namespace OOPEksamensOpgave.Models
             Balance = balance;
         }
 
+        public User(string firstName, string lastName, string userName, string email, decimal balance)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            UserName = userName;
+            Email = email;
+            Balance = balance;
+            ID = NextID++;
+            
+        }
+
         //returns all userdata
         public string AllUserData()
         {
-            return $"{ID,-4} {FirstName,-10} {LastName,-10} {UserName,-10} {Email, -10} {string.Format("{0:0.00}", Balance),10}";
+            return $"{ID,7} {FirstName,-10} {LastName,-10} {UserName,-10} {Email, -10} {string.Format("{0:0.00}", Balance),10}";
         }
 
         public override string ToString()
@@ -121,6 +134,12 @@ namespace OOPEksamensOpgave.Models
             private set { _id = value; }
         }
 
+        public uint NextID
+        {
+            get { return _nextID; }
+            private set { _nextID = value; }
+        }
+
         public string FirstName
         {
             get { return _firstName; }
@@ -130,7 +149,7 @@ namespace OOPEksamensOpgave.Models
                 {
                     if (value == null)
                     {
-                        throw new  NameNullExeption("First Name can not be null");
+                        throw new  NameNullExeption("First Name of User can not be null");
                     }
                     else
                         _firstName = value;
@@ -151,7 +170,7 @@ namespace OOPEksamensOpgave.Models
                 {
                     if (value == null)
                     {
-                        throw new NameNullExeption("Last Name can not be null");
+                        throw new NameNullExeption("Last Name of User can not be null");
                     }
                     else
                         _lastName = value;

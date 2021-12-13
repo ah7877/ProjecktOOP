@@ -6,9 +6,6 @@ using OOPEksamensOpgave.Services;
 using System.IO;
 
 
-
-
-
 namespace OOPEksamensOpgave
 {
     public delegate int UserBalanceNotification(User user, decimal balance);
@@ -19,17 +16,30 @@ namespace OOPEksamensOpgave
         static void Main(string[] args)
         {
             List<Product> products = ReadData.ReadProductFile();
+            Console.WriteLine("Products");
             foreach (Product p in products)
             {
                 Console.WriteLine(p.ToString());
             }
-            Console.ReadLine();
+
+            Console.WriteLine("Users");
             List<User> users = ReadData.ReadUserFile();
             foreach (User u in users)
             {
                 Console.WriteLine(u.AllUserData());
             }
-            Console.ReadLine();
+
+            Console.WriteLine("InsertCashTransactions");
+            InsertCashTransaction tom = new InsertCashTransaction(users[1], 5);
+            tom.Execute();
+            Console.WriteLine(tom.ToString());
+            Console.WriteLine(users[1].AllUserData());
+
+            Console.WriteLine("InsertCashTransactions");
+            BuyTransaction tim = new BuyTransaction(products[1], users[1]);
+            tim.Execute();
+            Console.WriteLine(tim.ToString());
+            Console.WriteLine(users[1].AllUserData());
 
             //TallySystem stregsystem = new TallySystem();
             //TallySystemUI ui = new StregsystemCLI(stregsystem);

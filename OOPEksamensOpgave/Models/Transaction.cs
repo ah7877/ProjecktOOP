@@ -8,47 +8,57 @@ namespace OOPEksamensOpgave.Models
 {
     public abstract class Transaction
     {
-        private int _id;
+        private uint _id;
+        private static uint _nextID = 1;
         private User _user;
         private DateTime _date;
-        private int _amount;
+        private decimal _amount;
 
-        protected Transaction(int iD, User user, int amount)
+        protected Transaction(User user, decimal amount)
         {
-            ID = iD;
             User = user;
             Amount = amount;
             Date = DateTime.Now;
+            ID = NextID++;
         }
-
-
-        /*
-        implimentationer
-            ToString
-                ID, user, amount og Date
-        Excecute
-            udfører transaktionen
-        fornuftig constructer
-         */
 
 
         public abstract void Execute();
-        public override string ToString() 
-        {
-            return $"ID:{ID,-10} User:{User.UserName,-10}, Amount: {Amount,-8}, Date: {Date.ToShortDateString(),-10}";
-        }
+
+        public abstract override string ToString();
 
 
-        public int ID
+        public uint ID
         {
             get { return _id; }
             private set { _id = value; }
+        }
+        public uint NextID
+        {
+            get { return _nextID; }
+            private set { _nextID = value; }
         }
 
         public User User
         {
             get { return _user; }
-            set { _user = value; }
+            set 
+            {
+                try
+                {
+                    if (value == null)
+                    {
+                        throw new NullReferenceException("A Transaction must contain a user");
+                    }
+                    else
+                        _user = value;
+                }
+                catch (NullReferenceException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                _user = value; 
+            }
         }
 
         public DateTime Date
@@ -57,7 +67,7 @@ namespace OOPEksamensOpgave.Models
             set { _date = value; }
         }
 
-        public int Amount
+        public decimal Amount
         {
             get { return _amount; }
             set { _amount = value; }
