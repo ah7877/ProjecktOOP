@@ -19,7 +19,7 @@ namespace OOPEksamensOpgave.Models
         private string _email;
         private decimal _balance;
 
-        public User(uint id, string firstName, string lastName, string userName, string email, decimal balance)
+        public User(uint id, string firstName, string lastName, string userName, string email, decimal balance = 0)
         {
             ID = id;
             NextID = id + 1;
@@ -30,7 +30,7 @@ namespace OOPEksamensOpgave.Models
             Balance = balance;
         }
 
-        public User(string firstName, string lastName, string userName, string email, decimal balance)
+        public User(string firstName, string lastName, string userName, string email, decimal balance = 0)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -38,18 +38,18 @@ namespace OOPEksamensOpgave.Models
             Email = email;
             Balance = balance;
             ID = NextID++;
-            
+
         }
 
         //returns all userdata
         public string AllUserData()
         {
-            return $"{ID,7} {FirstName,-10} {LastName,-10} {UserName,-10} {Email, -10} {string.Format("{0:0.00}", Balance),10}";
+            return $"{ID,7} {FirstName,-10} {LastName,-10} {UserName,-10} {Email,-10} {string.Format("{0:0.00}", Balance),10}";
         }
 
         public override string ToString()
         {
-            return $"{FirstName, -10} {LastName,-10}";
+            return $"{FirstName,-10} {LastName,-10}";
         }
 
         //makes User comparable
@@ -145,19 +145,12 @@ namespace OOPEksamensOpgave.Models
             get { return _firstName; }
             set
             {
-                try
+                if (value == null)
                 {
-                    if (value == null)
-                    {
-                        throw new  NameNullExeption("First Name of User can not be null");
-                    }
-                    else
-                        _firstName = value;
+                    throw new ArgumentNullException("First Name of User can not be null");
                 }
-                catch(NameNullExeption e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+                else
+                    _firstName = value;
             }
         }
 
@@ -166,19 +159,12 @@ namespace OOPEksamensOpgave.Models
             get { return _lastName; }
             set
             {
-                try
+                if (value == null)
                 {
-                    if (value == null)
-                    {
-                        throw new NameNullExeption("Last Name of User can not be null");
-                    }
-                    else
-                        _lastName = value;
+                    throw new ArgumentNullException("Last Name of User can not be null");
                 }
-                catch (NameNullExeption e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+                else
+                    _lastName = value;
             }
         }
 
@@ -187,19 +173,13 @@ namespace OOPEksamensOpgave.Models
             get { return _userName; }
             set
             {
-                try
+
+                if (!UsernameIsValid(value))
                 {
-                    if (!UsernameIsValid(value))
-                    {
-                        throw new ArgumentException("Username can only contain digits, lowercase letters and underscore");
-                    }
-                    else
-                        _userName = value;
+                    throw new ArgumentException("Username can only contain digits, lowercase letters and underscore");
                 }
-                catch (ArgumentException e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+                else
+                    _userName = value;
             }
         }
 
@@ -208,16 +188,9 @@ namespace OOPEksamensOpgave.Models
             get { return _email; }
             set
             {
-                try
+                if (EmailIsValid(value))
                 {
-                    if (EmailIsValid(value))
-                    {
-                        _email = value;
-                    }
-                }
-                catch (ArgumentException e)
-                {
-                    Console.WriteLine(e.Message);
+                    _email = value;
                 }
             }
         }

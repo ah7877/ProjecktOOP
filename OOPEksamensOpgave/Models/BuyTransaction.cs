@@ -25,20 +25,13 @@ namespace OOPEksamensOpgave.Models
 
         public override void Execute()
         {
-            try
+            if (User.Balance + Amount > 0)
             {
-                if (User.Balance + Amount > 0)
-                {
-                    User.Balance += Amount;
-
-                }
-                else
-                    throw new InsufficientCreditsException("User Balance is too low for this transaction", User, Product);
+                User.Balance += Amount;
+                LogTransactions.LogATransaction(this);
             }
-            catch(InsufficientCreditsException e)
-            {
-                Console.WriteLine(e.ToString());
-            }
+            else
+                throw new InsufficientCreditsException("User Balance is too low for this transaction", User, Product);
         }
 
         public override string ToString()

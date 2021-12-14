@@ -16,3 +16,11 @@ C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\ne
 C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.genruntimeconfig.cache
 C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\Data\products.csv
 C:\Users\Hougaard\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\Data\users.csv
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.csproj.AssemblyReference.cache
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.AssemblyInfoInputs.cache
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.AssemblyInfo.cs
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.csproj.CoreCompileInputs.cache
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.dll
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\ref\OOPEksamensOpgave.dll
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.pdb

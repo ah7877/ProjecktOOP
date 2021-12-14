@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hougaard\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj": {}
+    "C:\\Users\\andr9\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hougaard\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj": {
+    "C:\\Users\\andr9\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hougaard\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj",
+        "projectUniqueName": "C:\\Users\\andr9\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj",
         "projectName": "OOPEksamensOpgave",
-        "projectPath": "C:\\Users\\Hougaard\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj",
-        "packagesPath": "C:\\Users\\Hougaard\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hougaard\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\obj\\",
+        "projectPath": "C:\\Users\\andr9\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\OOPEksamensOpgave.csproj",
+        "packagesPath": "C:\\Users\\andr9\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andr9\\Source\\Repos\\ah7877\\ProjecktOOP\\OOPEksamensOpgave\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hougaard\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\andr9\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

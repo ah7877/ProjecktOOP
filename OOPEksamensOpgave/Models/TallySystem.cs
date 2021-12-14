@@ -10,6 +10,7 @@ namespace OOPEksamensOpgave.Models
 {
     public class TallySystem : ITallySystem
     {
+        public event UserBalanceNotification UserBalanceWarning;
         private List<User> _users = ReadData.ReadUserFile();
         private List<Product> _products = ReadData.ReadProductFile();
         public List<User> Users
@@ -25,19 +26,17 @@ namespace OOPEksamensOpgave.Models
 
         public IEnumerable<Product> ActiveProducts()
         {
-            List<Product> plst = new();
-            foreach(Product p in Products)
+            List<Product> list = new();
+            foreach (Product p in Products)
             {
-                if (p.IsActive==true)
+                if (p.IsActive == true)
                 {
-                    plst.Add(p);
+                    list.Add(p);
                 }
             }
-            IEnumerable<Product> p = plst;
-            return p;
+            return list;
         }
 
-        public event UserBalanceNotification UserBalanceWarning;
 
         public InsertCashTransaction AddCreditsToAccount(User user, int amount)
         {

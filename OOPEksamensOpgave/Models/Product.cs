@@ -26,7 +26,7 @@ namespace OOPEksamensOpgave.Models
 
         public string AllProductData()
         {
-            return $"{ID,7} {Name,-40} {string.Format("{0:0.00}", Price),10} IsActive = {IsActive, 5} CanBeBoughtOnCredits = {CanBeBoughtOnCredit,5}";
+            return $"{ID,7} {Name,-40} {string.Format("{0:0.00}", Price),10} IsActive = {IsActive,5} CanBeBoughtOnCredits = {CanBeBoughtOnCredit,5}";
         }
 
         public override string ToString()
@@ -51,19 +51,10 @@ namespace OOPEksamensOpgave.Models
             get { return _name; }
             set
             {
-                try
-                {
-                    if (value == null)
-                    {
-                        throw new NameNullExeption("Name of product can not be null");
-                    }
-                    else
-                        _name = value;
-                }
-                catch (NameNullExeption e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+                if (value == null)
+                    throw new ArgumentNullException("Name of product can not be null");
+                else
+                    _name = value;
             }
         }
 

@@ -44,20 +44,12 @@ namespace OOPEksamensOpgave.Models
             get { return _user; }
             set 
             {
-                try
-                {
                     if (value == null)
                     {
                         throw new NullReferenceException("A Transaction must contain a user");
                     }
                     else
                         _user = value;
-                }
-                catch (NullReferenceException e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-                _user = value; 
             }
         }
 

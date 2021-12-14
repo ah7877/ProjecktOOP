@@ -10,6 +10,13 @@ namespace OOPEksamensOpgave.ModelViewController
 {
     class TallySystemUI : ITallySystemUI
     {
+        private TallySystem _tS; //tallysystem
+
+        public TallySystemUI(TallySystem tS)
+        {
+            TS = tS;
+        }
+
         public event StregsystemEvent CommandEntered;
 
         public void Close()
@@ -42,14 +49,13 @@ namespace OOPEksamensOpgave.ModelViewController
             Console.WriteLine($"Command {command} contains too many arguments");
         }
 
-        public void DisplayUserBuysProduct(BuyTransaction transaction)
-        {
-            throw new NotImplementedException();
-        }
-
         public void DisplayUserBuysProduct(int count, BuyTransaction transaction)
         {
-            throw new NotImplementedException();
+            if (count > 1)
+                Console.WriteLine($"{count} * {transaction.Product.Name}'s have been purchased.");
+            else
+                Console.WriteLine($"{transaction.Product.Name} has been purchased.");
+
         }
 
         public void DisplayUserInfo(User user)
@@ -67,12 +73,18 @@ namespace OOPEksamensOpgave.ModelViewController
             Console.Clear();
             Console.WriteLine($"{"ID",5}{"Product",-20}{"Price",10}");
 
-            IEnumerable<Product> products = TallySystem.ActiveProducts();
+            IEnumerable<Product> products = TS.ActiveProducts();
             foreach (Product p in products)
             {
                 Console.WriteLine(p.ToString());
             }
 
+        }
+
+        public TallySystem TS
+        {
+            get { return _tS; }
+            set { _tS = value; }
         }
     }
 }
