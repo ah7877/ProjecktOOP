@@ -27,7 +27,6 @@ namespace OOPEksamensOpgave.Models
 
         public abstract override string ToString();
 
-
         public uint ID
         {
             get { return _id; }

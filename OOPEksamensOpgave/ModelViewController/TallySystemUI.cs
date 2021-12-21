@@ -10,11 +10,11 @@ namespace OOPEksamensOpgave.ModelViewController
 {
     class TallySystemUI : ITallySystemUI
     {
-        private TallySystem _tS; //tallysystem
+        private TallySystem ts; //tallysystem
 
-        public TallySystemUI(TallySystem tS)
+        public TallySystemUI(TallySystem ts)
         {
-            TS = tS;
+            this.ts = ts;
         }
 
         public event StregsystemEvent CommandEntered;
@@ -36,7 +36,7 @@ namespace OOPEksamensOpgave.ModelViewController
 
         public void DisplayInsufficientCash(User user, Product product)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{user.UserName} Balance too low, to buy product {product.ID}");
         }
 
         public void DisplayProductNotFound(string productID)
@@ -60,7 +60,13 @@ namespace OOPEksamensOpgave.ModelViewController
 
         public void DisplayUserInfo(User user)
         {
-            Console.WriteLine(user);
+            Console.WriteLine($"{user.UserName} { user.ToString()} {string.Format("{0:0.00}", user.Balance)}");
+            Console.WriteLine();
+            
+            foreach (Transaction t in ts.GetTransactions(user, 10))
+            {
+                Console.WriteLine(t.ToString());
+            }
         }
 
         public void DisplayUserNotFound(string username)
@@ -70,21 +76,21 @@ namespace OOPEksamensOpgave.ModelViewController
 
         public void Start()
         {
-            Console.Clear();
-            Console.WriteLine($"{"ID",5}{"Product",-20}{"Price",10}");
-
-            IEnumerable<Product> products = TS.ActiveProducts();
-            foreach (Product p in products)
+            while (true)
             {
-                Console.WriteLine(p.ToString());
+                Console.Clear();
+                Console.WriteLine($"{"ID",5}{"Product",-20}{"Price",10}");
+
+                IEnumerable<Product> products = ts.ActiveProducts();
+                foreach (Product p in products)
+                {
+                    Console.WriteLine(p.ToString());
+                }
+                string command = Console.ReadLine();
+                Console.Clear();
+                CommandEntered(command);
+                Console.ReadKey();
             }
-
-        }
-
-        public TallySystem TS
-        {
-            get { return _tS; }
-            set { _tS = value; }
         }
     }
 }

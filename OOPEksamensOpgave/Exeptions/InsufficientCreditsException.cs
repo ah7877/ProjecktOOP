@@ -12,15 +12,10 @@ namespace OOPEksamensOpgave.Exeptions
         private User _user;
         private Product _product;
         
-        public InsufficientCreditsException(string message, User user, Product product) : base(message)
+        public InsufficientCreditsException(User user, Product product)
         {
             User = user;
             Product = product;
-        }
-
-        public override string ToString()
-        {
-            return $"{Message}\nUser = {User.AllUserData()} \nProduct = {Product.AllProductData()}";
         }
 
         public User User
@@ -35,7 +30,5 @@ namespace OOPEksamensOpgave.Exeptions
             get { return _product; }
             set { _product = value; }
         }
-
-
     }
 }

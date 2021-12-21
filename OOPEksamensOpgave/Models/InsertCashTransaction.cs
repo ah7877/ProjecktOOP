@@ -21,7 +21,7 @@ namespace OOPEksamensOpgave.Models
 
         public override string ToString()
         {
-            return $"{ID,7} {User.UserName,-10} {string.Format("{0:0.00}", Amount), 10} {Date.ToShortDateString(),-10} deposit transaction";
+            return $"{ID,7} {User.UserName,-10} {string.Format("{0:0.00}", Amount), 10} {Date.ToShortDateString(),-10} deposit";
         }
     }
 }

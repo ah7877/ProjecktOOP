@@ -8,9 +8,6 @@ namespace OOPEksamensOpgave.Interfaces
 {
     interface ITallySystemController
     {
-        //skal modtage en command fra UI
-        //skal dele commands op i strings
-        //skal aktivere commands
         public void ParseCommand(string command);
     }
 }

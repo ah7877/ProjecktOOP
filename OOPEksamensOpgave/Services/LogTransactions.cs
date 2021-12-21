@@ -13,7 +13,6 @@ namespace OOPEksamensOpgave.Services
         public static async void LogATransaction(Transaction t)
         {
             using StreamWriter file = new(Directory.GetCurrentDirectory() + "\\Data\\TransactionLog.csv", append: true);
-            Console.WriteLine(Directory.GetCurrentDirectory() + "\\Data\\TransactionLog.csv");
 
             await file.WriteLineAsync(t.ToString());
         }

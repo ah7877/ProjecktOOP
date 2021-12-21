@@ -11,7 +11,7 @@ using System.IO;
 namespace OOPEksamensOpgave
 {
     public delegate int UserBalanceNotification(User user, decimal balance);
-    public delegate int StregsystemEvent(User user, decimal balance);
+    public delegate void StregsystemEvent(string command);
 
     class Program
     {

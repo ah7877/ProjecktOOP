@@ -2,8 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\OOPEksamensOpgave",
-    "\\OOPEksamensOpgave\\Models"
+    "\\OOPEksamensOpgave\\Interfaces"
   ],
-  "SelectedNode": "\\OOPEksamensOpgave\\Models\\User.cs",
+  "SelectedNode": "\\OOPEksamensOpgave\\Interfaces\\ITallySystemController.cs",
   "PreviewInSolutionExplorer": false
 }

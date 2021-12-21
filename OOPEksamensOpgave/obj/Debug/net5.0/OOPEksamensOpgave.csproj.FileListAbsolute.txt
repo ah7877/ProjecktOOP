@@ -24,3 +24,13 @@ C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.
 C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.dll
 C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\ref\OOPEksamensOpgave.dll
 C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.pdb
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.exe
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\Data\products.csv
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\Data\users.csv
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.deps.json
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.runtimeconfig.json
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.runtimeconfig.dev.json
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.dll
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\ref\OOPEksamensOpgave.dll
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\bin\Debug\net5.0\OOPEksamensOpgave.pdb
+C:\Users\andr9\Source\Repos\ah7877\ProjecktOOP\OOPEksamensOpgave\obj\Debug\net5.0\OOPEksamensOpgave.genruntimeconfig.cache

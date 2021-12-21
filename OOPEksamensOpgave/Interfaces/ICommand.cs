@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPEksamensOpgave.Commands
+namespace OOPEksamensOpgave.Interfaces
 {
-    class Quit
+    interface ICommand
     {
-        
+        public void Execute();
     }
 }
